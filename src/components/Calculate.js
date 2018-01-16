@@ -48,12 +48,12 @@ const getWithholdingTax = (payrollPeriod, annualWage, filingStatus, taxpayerAllo
   const standard_deduction = preTCJA['standard_deduction'][filingStatus];
   const tcja_standard_deduction = TCJA['standard_deduction'][filingStatus];
   const payrollPeriodValue = yearlyPayrollPeriods.filter(p => p.type === payrollPeriod)[0]['value'];
-  const roundingPayrollPeriodValue = yearlyPayrollPeriods.filter(p => p.type === payrollPeriod)[0]['value'];
+  const roundingPayrollPeriodValue = roundingPayrollPeriods.filter(p => p.type === payrollPeriod)[0]['value'];
 
   const payroll_wage = annualWage / payrollPeriodValue;
 
   const allowances = yearlyPayrollPeriods.map(p => {
-    return {type: p.type, allowance: Math.round(personal_exemption / p.value, 1)};
+    return {type: p.type, allowance: precisionRound(personal_exemption / p.value, 1)};
   });
 
   const preTCJABrackets = preTCJA.brackets[filingStatus].map(b => {
