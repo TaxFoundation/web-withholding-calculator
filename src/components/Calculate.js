@@ -66,9 +66,10 @@ const getWithholdingTax = (payrollPeriod, annualWage, filingStatus, taxpayerAllo
   });
 
   const TCJABrackets = TCJA.brackets[filingStatus].map(b => {
-    let newThreshold = precisionRound((b.threshold
-      + tcja_standard_deduction
-      - (filingStatus === 'single' ? 2 * personal_exemption : 3 * personal_exemption))
+    let newThreshold = precisionRound(
+      (b.threshold + tcja_standard_deduction - (
+        filingStatus === 'single' ? 2 * personal_exemption : 3 * personal_exemption
+      ))
       / payrollPeriodValue,
       roundingPayrollPeriodValue
     );
