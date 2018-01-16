@@ -22,8 +22,9 @@ class App extends Component {
   }
 
   updateIncome(income) {
-    if (typeof income === 'number' && income >= 0) {
-      this.setState({ income });
+    let numericIncome = +income;
+    if (typeof numericIncome === 'number' && numericIncome >= 0) {
+      this.setState({ income: numericIncome });
     }
   }
 
