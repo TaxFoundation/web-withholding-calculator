@@ -8,7 +8,7 @@ const precisionRound = (number, precision) => {
 const calcTax = (brackets, income) => {
   let withheldTax = 0;
   if (income > 0) {
-    brackets.reduceRight((taxableIncome, bracket) => {
+    brackets.sort((a, b) => a.threshold - b.threshold).reduceRight((taxableIncome, bracket) => {
       if (bracket.threshold < taxableIncome) {
         withheldTax += (taxableIncome - bracket.threshold) * bracket.rate;
         return taxableIncome = bracket.threshold;
