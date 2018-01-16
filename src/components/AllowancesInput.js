@@ -1,8 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import NumericInput from './NumericInput';
 
 const AllowancesInput = props => {
-
+  return (
+    <NumericInput
+      placeholder={props.initialValue || 0}
+      type="number"
+      onChange={e => props.update(e.target.value)}
+    />
+  );
 };
 
 export default AllowancesInput;

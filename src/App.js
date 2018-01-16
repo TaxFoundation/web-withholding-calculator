@@ -19,6 +19,7 @@ class App extends Component {
     this.updateIncome = this.updateIncome.bind(this);
     this.updateFilingStatus = this.updateFilingStatus.bind(this);
     this.updatePayrollPeriod = this.updatePayrollPeriod.bind(this);
+    this.updateAllowances = this.updateAllowances.bind(this);
   }
 
   updateIncome(income) {
@@ -44,26 +45,39 @@ class App extends Component {
       'monthly',
       'quarterly',
       'semiannually',
-      'annually',
+      'annually'
     ];
     if (periods.indexOf(payrollPeriod) >= 0) {
-      this.setState({payrollPeriod});
+      this.setState({ payrollPeriod });
     }
   }
 
   updateAllowances(allowances) {
-    if (typeof allowances === 'number') {
-      this.setState({allowances});
+    let numericAllowances = +allowances;
+    if (typeof numericAllowances === 'number') {
+      this.setState({ allowances: numericAllowances });
     }
   }
 
   render() {
     return (
       <div className="App">
-        <IncomeInput update={this.updateIncome} />
-        <FilingStatusSelector update={this.updateFilingStatus} />
-        <PayrollPeriodSelector update={this.updatePayrollPeriod} />
-        <AllowancesInput update={this.updateAllowances} />
+        <IncomeInput
+          initialValue={this.state.income}
+          update={this.updateIncome}
+        />
+        <FilingStatusSelector
+          initialValue={this.state.filingStatus}
+          update={this.updateFilingStatus}
+        />
+        <PayrollPeriodSelector
+          initialValue={this.state.payrollPeriod}
+          update={this.updatePayrollPeriod}
+        />
+        <AllowancesInput
+          initialValue={this.state.allowances}
+          update={this.updateAllowances}
+        />
         <ResultsTable taxpayer={this.state} />
       </div>
     );
