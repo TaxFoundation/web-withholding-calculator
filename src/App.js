@@ -57,7 +57,15 @@ class App extends Component {
   }
 
   render() {
-    return <div className="App" />;
+    return (
+      <div className="App">
+        <IncomeInput update={this.updateIncome} />
+        <FilingStatusSelector update={this.updateFilingStatus} />
+        <PayrollPeriodSelector update={this.updatePayrollPeriod} />
+        <AllowancesInput update={this.updateAllowances} />
+        <ResultsTable taxpayer={this.state} />
+      </div>
+    );
   }
 }
 
