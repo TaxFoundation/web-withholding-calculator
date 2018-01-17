@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { format } from 'd3-format';
 import getWithholdingTax from './Calculate';
+
+const Container = styled.div`
+  grid-column: 1 / 3;
+`;
+
+const dollarFormat = format('$,');
 
 const ResultsTable = props => {
   const results = getWithholdingTax(
@@ -11,10 +18,22 @@ const ResultsTable = props => {
   );
 
   return (
-    <div>
-      <p>{results['pre-tcja']}</p>
-      <p>{results['tcja']}</p>
-    </div>
+    <Container>
+      <table>
+        <thead>
+          <tr>
+            <th>Pre-TCJA Pay Period Withholding</th>
+            <th>Post-TCJA Pay Period Withholding</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{dollarFormat(results['pre-tcja'])}</td>
+            <td>{dollarFormat(results['tcja'])}</td>
+          </tr>
+        </tbody>
+      </table>
+    </Container>
   );
 };
 

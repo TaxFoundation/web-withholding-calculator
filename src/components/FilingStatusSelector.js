@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Status = styled.div`
+  display: inline-block;
 `;
 
 const Label = styled.label`

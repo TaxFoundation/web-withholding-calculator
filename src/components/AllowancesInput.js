@@ -1,10 +1,11 @@
 import React from 'react';
+import Label from './Label';
 import NumericInput from './NumericInput';
 
 const AllowancesInput = props => {
   return (
     <div>
-      <label htmlFor="allowances">Allowances</label>
+      <Label htmlFor="allowances">Allowances</Label>
       <NumericInput
         id="allowances"
         name="allowances"

@@ -9,9 +9,11 @@ import ResultsTable from './components/ResultsTable';
 
 const Container = styled.div`
   display: grid;
+  grid-gap: 20px;
   grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   font-family: ${props => props.theme.fontFamily};
   font-size: ${props => props.theme.fontSize};
+  max-width: 720px;
 `;
 
 class App extends Component {
@@ -19,7 +21,7 @@ class App extends Component {
     super();
 
     this.state = {
-      income: 0,
+      income: 55000,
       filingStatus: 'single',
       payrollPeriod: 'semimonthly',
       allowances: 2
