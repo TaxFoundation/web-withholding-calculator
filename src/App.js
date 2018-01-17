@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import Theme from './Theme';
 import FilingStatusSelector from './components/FilingStatusSelector';
 import IncomeInput from './components/IncomeInput';
 import PayrollPeriodSelector from './components/PayrollPeriodSelector';
 import AllowancesInput from './components/AllowancesInput';
 import ResultsTable from './components/ResultsTable';
+
+const Container = styled.div`
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  font-family: ${props => props.theme.fontFamily};
+  font-size: ${props => props.theme.fontSize};
+`;
 
 class App extends Component {
   constructor() {
@@ -61,25 +70,27 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <IncomeInput
-          initialValue={this.state.income}
-          update={this.updateIncome}
-        />
-        <FilingStatusSelector
-          initialValue={this.state.filingStatus}
-          update={this.updateFilingStatus}
-        />
-        <PayrollPeriodSelector
-          initialValue={this.state.payrollPeriod}
-          update={this.updatePayrollPeriod}
-        />
-        <AllowancesInput
-          initialValue={this.state.allowances}
-          update={this.updateAllowances}
-        />
-        <ResultsTable taxpayer={this.state} />
-      </div>
+      <ThemeProvider theme={Theme}>
+        <Container className="App">
+          <IncomeInput
+            initialValue={this.state.income}
+            update={this.updateIncome}
+          />
+          <FilingStatusSelector
+            initialValue={this.state.filingStatus}
+            update={this.updateFilingStatus}
+          />
+          <PayrollPeriodSelector
+            initialValue={this.state.payrollPeriod}
+            update={this.updatePayrollPeriod}
+          />
+          <AllowancesInput
+            initialValue={this.state.allowances}
+            update={this.updateAllowances}
+          />
+          <ResultsTable taxpayer={this.state} />
+        </Container>
+      </ThemeProvider>
     );
   }
 }
