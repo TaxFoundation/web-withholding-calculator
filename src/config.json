@@ -130,5 +130,15 @@
     "additional_standard_deduction": {"single": 1600.0, "married": 1300.0, "hoh": 1600.0},
     "additional_ctc_threshold": 2500.0,
     "additional_ctc_rate": 0.15
-  }]
+  }],
+  "yearlyPayrollPeriods": [
+    { "type": "daily", "value": 260, "round": 1 },
+    { "type": "weekly", "value": 52, "round": 0 },
+    { "type": "biweekly", "value": 26, "round": 0 },
+    { "type": "semimonthly", "value": 24, "round": 0 },
+    { "type": "monthly", "value": 12, "round": 0 },
+    { "type": "quarterly", "value": 4, "round": 0 },
+    { "type": "semiannually", "value": 2, "round": 0 },
+    { "type": "annually", "value": 1, "round": 0 }
+  ]
 }
