@@ -10,16 +10,6 @@ const testCases = [
 ];
 
 describe('Withholding Taxes Owed Function', () => {
-  it('should never return a negative number', () => {
-    testCases.map(n => {
-      let tax = getWithholdingTax(n.period, n.income, n.status, n.allowances);
-      assert(
-        tax['pre-tcja'] >= 0,
-        `A negative marginal tax owed was returned for income of ${n.income}`
-      );
-    });
-  });
-
   it('should return the correct marginal tax owed', () => {
     testCases.map((n) => {
       let tax = getWithholdingTax(n.period, n.income, n.status, n.allowances);
