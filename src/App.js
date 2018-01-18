@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   updateIncome(income) {
-    let numericIncome = +income;
+    let numericIncome = parseFloat(income.replace(/[^\d.]/g, ''), 10);
     if (typeof numericIncome === 'number' && numericIncome >= 0) {
       this.setState({ income: numericIncome });
     }

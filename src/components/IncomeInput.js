@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { format } from 'd3-format';
 import Label from './Label';
 import NumericInput from './NumericInput';
+
+const dollarFormat = format('$,');
 
 const Container = styled.div`
   display: grid;
@@ -15,9 +18,11 @@ const IncomeInput = props => {
       <Label htmlFor="income">Worker Wages</Label>
       <NumericInput
         id="income"
+        min="0"
         name="income"
-        placeholder={props.initialValue || 0}
-        type="number"
+        placeholder={dollarFormat(props.initialValue || 0)}
+        step="0.01"
+        type="text"
         onChange={e => props.update(e.target.value)}
       />
     </Container>
