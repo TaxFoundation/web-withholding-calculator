@@ -9,11 +9,16 @@ import ResultsTable from './components/ResultsTable';
 
 const Container = styled.div`
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 30px;
   grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   font-family: ${props => props.theme.fontFamily};
   font-size: ${props => props.theme.fontSize};
+  line-height: 1;
   max-width: 720px;
+
+  * {
+    box-sizing: border-box;
+  }
 `;
 
 class App extends Component {

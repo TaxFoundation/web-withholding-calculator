@@ -7,6 +7,18 @@ const Container = styled.div`
   grid-column: 1 / 3;
 `;
 
+const Table = styled.table`
+  width: 100%;
+
+  th, td {
+    text-align: center;
+  }
+
+  td {
+    font-size: 2rem;
+  }
+`;
+
 const dollarFormat = format('$,');
 
 const ResultsTable = props => {
@@ -19,20 +31,22 @@ const ResultsTable = props => {
 
   return (
     <Container>
-      <table>
+      <Table>
         <thead>
           <tr>
             <th>Pre-TCJA Pay Period Withholding</th>
             <th>Post-TCJA Pay Period Withholding</th>
+            <th>Difference</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>{dollarFormat(results['pre-tcja'])}</td>
             <td>{dollarFormat(results['tcja'])}</td>
+            <td>{dollarFormat(results['pre-tcja'] - results['tcja'])}</td>
           </tr>
         </tbody>
-      </table>
+      </Table>
     </Container>
   );
 };

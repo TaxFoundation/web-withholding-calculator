@@ -1,11 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 import Label from './Label';
 import NumericInput from './NumericInput';
 
+const Container = styled.div`
+  display: grid;
+  grid-gap: 10px;
+  grid-template: 2fr / 1fr;
+`;
+
 const IncomeInput = props => {
   return (
-    <div>
-      <Label htmlFor="income">Household Income</Label>
+    <Container>
+      <Label htmlFor="income">Worker Wages</Label>
       <NumericInput
         id="income"
         name="income"
@@ -13,7 +20,7 @@ const IncomeInput = props => {
         type="number"
         onChange={e => props.update(e.target.value)}
       />
-    </div>
+    </Container>
   );
 };
 

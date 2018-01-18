@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import Label from './Label';
 import config from '../config.json';
 
+const Container = styled.div`
+  display: grid;
+  grid-gap: 10px;
+  grid-template: 2fr / 1fr;
+`;
+
 const Select = styled.select`
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -13,13 +19,13 @@ const Select = styled.select`
   border: 1px solid #333333;
   border-radius: 4px;
   font-size: ${props => props.theme.fontSize};
-  padding-right: 20px;
+  padding: 4px 20px 4px 4px;
   width: 100%;
 `;
 
 const PayrollPeriodSelector = props => {
   return (
-    <div>
+    <Container>
       <Label htmlFor="payroll-periods">Select Frequency of Paycheck</Label>
       <Select
         defaultValue={props.initialValue}
@@ -37,7 +43,7 @@ const PayrollPeriodSelector = props => {
           );
         })}
       </Select>
-    </div>
+    </Container>
   );
 };
 
