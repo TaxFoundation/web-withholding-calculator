@@ -5,6 +5,10 @@ import getWithholdingTax from './Calculate';
 
 const Container = styled.div`
   grid-column: 1 / 3;
+
+  @media (max-width: 480px) {
+    grid-column: span 1;
+  }
 `;
 
 const Table = styled.table`
@@ -25,6 +29,16 @@ const Table = styled.table`
 
   td {
     font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    th {
+      font-size: 0.6rem;
+    }
+
+    td {
+      font-size: 0.8rem;
+    }
   }
 `;
 

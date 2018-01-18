@@ -23,6 +23,10 @@ const Container = styled.div`
   * {
     box-sizing: border-box;
   }
+
+  @media (max-width: 480px) {
+    grid-template: repeat(4, 1fr) 2fr / 100%;
+  }
 `;
 
 class App extends Component {
