@@ -8,7 +8,7 @@ const dollarFormat = format('$,');
 
 const Container = styled.div`
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 5px 10px;
   grid-template: 2fr / 1fr;
 `;
 

@@ -1,13 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import Container from './InputContainer';
 import Label from './Label';
 import config from '../config.json';
-
-const Container = styled.div`
-  display: grid;
-  grid-gap: 10px;
-  grid-template: 2fr / 1fr;
-`;
 
 const Select = styled.select`
   -webkit-appearance: none;

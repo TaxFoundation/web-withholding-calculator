@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import Label from './Label';
 
 const Form = styled.form`
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 0 10px;
   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
 `;
 
