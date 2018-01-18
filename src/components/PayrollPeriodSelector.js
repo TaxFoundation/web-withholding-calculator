@@ -16,6 +16,10 @@ const Select = styled.select`
   font-size: ${props => props.theme.fontSize};
   padding: 4px 20px 8px 4px;
   width: 100%;
+
+  &:focus {
+    border: 1px solid ${props => props.theme.tfBlue};
+  }
 `;
 
 const PayrollPeriodSelector = props => {

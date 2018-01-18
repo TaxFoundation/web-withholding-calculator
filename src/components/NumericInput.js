@@ -14,6 +14,10 @@ const NumericInput = styled.input`
   &::-webkit-outer-spin-button {
     -webkit-appearance: none;
   }
+
+  &:focus {
+    border: 1px solid ${props => props.theme.tfBlue};
+  }
 `;
 
 export default NumericInput;
