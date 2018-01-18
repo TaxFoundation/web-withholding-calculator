@@ -21,8 +21,9 @@ const Status = styled.div`
     border: 1px solid ${props => props.theme.tfBlue};
     border-radius: 4px;
     color: #fff;
+    cursor: pointer;
     display: block;
-    padding: 4px 6px;
+    padding: 6px 6px;
     text-align: center;
   }
 
