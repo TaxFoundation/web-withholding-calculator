@@ -61,7 +61,7 @@ const ResultsTable = props => {
           <tr>
             <th>Pre-TCJA Pay Period Withholding</th>
             <th>Post-TCJA Pay Period Withholding</th>
-            <th>Difference</th>
+            <th>Difference to Take-Home Pay</th>
           </tr>
         </thead>
         <tbody>
@@ -69,7 +69,7 @@ const ResultsTable = props => {
             <td>{dollarFormat(results['pre-tcja'])}</td>
             <td>{dollarFormat(results['tcja'])}</td>
             <td style={{color: (delta >= 0 ? 'green' : 'red')}}>
-              {dollarFormat(delta)}
+              {(delta >= 0 ? '+' : '-') + dollarFormat(delta)}
             </td>
           </tr>
         </tbody>

@@ -10,6 +10,8 @@ const AllowancesInput = props => {
       <NumericInput
         id="allowances"
         name="allowances"
+        max="100"
+        min="0"
         placeholder={props.initialValue || 0}
         type="number"
         onChange={e => props.update(e.target.value)}

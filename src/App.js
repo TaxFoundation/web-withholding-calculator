@@ -78,7 +78,7 @@ class App extends Component {
 
   updateAllowances(allowances) {
     let numericAllowances = +allowances;
-    if (typeof numericAllowances === 'number') {
+    if (typeof numericAllowances === 'number' && numericAllowances >= 0) {
       this.setState({ allowances: numericAllowances });
     }
   }

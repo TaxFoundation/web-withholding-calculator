@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { format } from 'd3-format';
 import Container from './InputContainer';
 import Label from './Label';
+import Tooltip from './Tooltip';
 import NumericInput from './NumericInput';
 
 const dollarFormat = format('$,');
@@ -10,7 +11,7 @@ const dollarFormat = format('$,');
 const IncomeInput = props => {
   return (
     <Container>
-      <Label htmlFor="income">Worker Wages</Label>
+      <Label htmlFor="income">Worker Wages <Tooltip /></Label>
       <NumericInput
         id="income"
         min="0"
