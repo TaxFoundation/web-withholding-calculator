@@ -14,7 +14,7 @@ const Select = styled.select`
   border: 1px solid #333333;
   border-radius: 4px;
   font-size: ${props => props.theme.fontSize};
-  padding: 4px 20px 4px 4px;
+  padding: 4px 20px 8px 4px;
   width: 100%;
 `;
 

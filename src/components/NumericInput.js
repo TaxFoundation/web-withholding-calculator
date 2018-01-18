@@ -6,7 +6,7 @@ const NumericInput = styled.input`
   border-radius: 4px;
   font-size: ${props => props.theme.fontSize};
   margin: 0;
-  padding: 4px;
+  padding: 4px 8px;
   text-align: right;
   width: 100%;
 

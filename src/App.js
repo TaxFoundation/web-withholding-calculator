@@ -8,13 +8,17 @@ import AllowancesInput from './components/AllowancesInput';
 import ResultsTable from './components/ResultsTable';
 
 const Container = styled.div`
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 4px;
   display: grid;
   grid-gap: 30px;
-  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  grid-template: 1fr 1fr 2fr / repeat(2, 1fr);
   font-family: ${props => props.theme.fontFamily};
   font-size: ${props => props.theme.fontSize};
   line-height: 1;
   max-width: 720px;
+  padding: 1rem;
 
   * {
     box-sizing: border-box;

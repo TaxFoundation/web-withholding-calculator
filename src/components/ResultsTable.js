@@ -8,10 +8,19 @@ const Container = styled.div`
 `;
 
 const Table = styled.table`
+  border-top: 1px solid #999;
+  padding-top: 10px;
+  table-layout: fixed;
   width: 100%;
 
   th, td {
     text-align: center;
+  }
+
+  th {
+    line-height: 1.4;
+    padding: 10px 0;
+    vertical-align: bottom;
   }
 
   td {
@@ -29,6 +38,8 @@ const ResultsTable = props => {
     props.taxpayer.allowances
   );
 
+  const delta = results['pre-tcja'] - results['tcja'];
+
   return (
     <Container>
       <Table>
@@ -43,7 +54,9 @@ const ResultsTable = props => {
           <tr>
             <td>{dollarFormat(results['pre-tcja'])}</td>
             <td>{dollarFormat(results['tcja'])}</td>
-            <td>{dollarFormat(results['pre-tcja'] - results['tcja'])}</td>
+            <td style={{color: (delta >= 0 ? 'green' : 'red')}}>
+              {dollarFormat(delta)}
+            </td>
           </tr>
         </tbody>
       </Table>

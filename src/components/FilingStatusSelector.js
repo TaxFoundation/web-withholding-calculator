@@ -5,11 +5,14 @@ import Label from './Label';
 
 const Form = styled.form`
   display: grid;
-  grid-gap: 0 10px;
-  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-template: 2fr 5fr / repeat(2, 1fr);
 `;
 
 const Status = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   grid-column: span 1;
   grid-row: 2 / 3;
 
@@ -24,7 +27,9 @@ const Status = styled.div`
     color: #fff;
     cursor: pointer;
     display: block;
-    padding: 6px 6px;
+    flex: 1 0 auto;
+    height: 100%;
+    line-height: 2.2;
     text-align: center;
   }
 
