@@ -6,6 +6,7 @@ import IncomeInput from './components/IncomeInput';
 import PayrollPeriodSelector from './components/PayrollPeriodSelector';
 import AllowancesInput from './components/AllowancesInput';
 import ResultsTable from './components/ResultsTable';
+import ShareBoxes from './components/ShareBoxes';
 
 const Container = styled.div`
   background-color: #fff;
@@ -13,7 +14,7 @@ const Container = styled.div`
   border-radius: 4px;
   display: grid;
   grid-gap: 30px;
-  grid-template: 1fr 1fr 2fr / repeat(2, 1fr);
+  grid-template: 2fr 2fr 3fr 1fr / repeat(2, 1fr);
   font-family: ${props => props.theme.fontFamily};
   font-size: ${props => props.theme.fontSize};
   line-height: 1;
@@ -25,7 +26,7 @@ const Container = styled.div`
   }
 
   @media (max-width: 480px) {
-    grid-template: repeat(4, 1fr) 2fr / 100%;
+    grid-template: repeat(4, 1fr) 2fr 1fr / 100%;
   }
 `;
 
@@ -104,6 +105,7 @@ class App extends Component {
             update={this.updateAllowances}
           />
           <ResultsTable taxpayer={this.state} />
+          <ShareBoxes />
         </Container>
       </ThemeProvider>
     );
