@@ -42,7 +42,7 @@ const Table = styled.table`
   }
 `;
 
-const dollarFormat = format('$,');
+const dollarFormat = format('$,.2f');
 
 const ResultsTable = props => {
   const results = getWithholdingTax(
@@ -69,7 +69,7 @@ const ResultsTable = props => {
             <td>{dollarFormat(results['pre-tcja'])}</td>
             <td>{dollarFormat(results['tcja'])}</td>
             <td style={{color: (delta >= 0 ? 'green' : 'red')}}>
-              {(delta >= 0 ? '+' : '-') + dollarFormat(delta)}
+              {(delta >= 0 ? '+' : '') + dollarFormat(delta)}
             </td>
           </tr>
         </tbody>
