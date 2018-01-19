@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import DollarFormat from './DollarFormat';
 import Container from './InputContainer';
 import Label from './Label';
