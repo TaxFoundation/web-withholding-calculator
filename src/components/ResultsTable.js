@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { format } from 'd3-format';
+import DollarFormat from './DollarFormat';
 import getWithholdingTax from './Calculate';
 
 const Container = styled.div`
@@ -42,8 +42,6 @@ const Table = styled.table`
   }
 `;
 
-const dollarFormat = format('$,.2f');
-
 const ResultsTable = props => {
   const results = getWithholdingTax(
     props.taxpayer.payrollPeriod,
@@ -66,10 +64,10 @@ const ResultsTable = props => {
         </thead>
         <tbody>
           <tr>
-            <td>{dollarFormat(results['pre-tcja'])}</td>
-            <td>{dollarFormat(results['tcja'])}</td>
+            <td>{DollarFormat(results['pre-tcja'])}</td>
+            <td>{DollarFormat(results['tcja'])}</td>
             <td style={{color: (delta >= 0 ? 'green' : 'red')}}>
-              {(delta >= 0 ? '+' : '') + dollarFormat(delta)}
+              {(delta >= 0 ? '+' : '') + DollarFormat(delta)}
             </td>
           </tr>
         </tbody>

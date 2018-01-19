@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { format } from 'd3-format';
+import DollarFormat from './DollarFormat';
 import Container from './InputContainer';
 import Label from './Label';
 import Tooltip from './Tooltip';
 import NumericInput from './NumericInput';
-
-const dollarFormat = format('$,');
 
 const IncomeInput = props => {
   return (
@@ -16,7 +14,7 @@ const IncomeInput = props => {
         id="income"
         min="0"
         name="income"
-        placeholder={dollarFormat(props.initialValue || 0)}
+        placeholder={DollarFormat(props.initialValue || 0)}
         step="0.01"
         type="text"
         onChange={e => props.update(e.target.value)}
